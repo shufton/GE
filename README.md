@@ -1,38 +1,21 @@
-# create-svelte
+# GE
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## Introduction
+This is a learning project for me, to cover a load of sligtly different stuff
+* [vite](https://vitejs.dev/)
+* [svelte](https://svelte.dev/) and [sveltekit](https://kit.svelte.dev/)
+* [MSAL](https://learn.microsoft.com/en-us/azure/active-directory/develop/msal-overview)
+* [d3.js](https://d3js.org/)
 
-## Creating a project
+The finished app is (supposed) to be a live tracker for UK GE results with the UK constituencies rendered in SVG. As results come in, the constituency chnges colour from the previous party to the new (because lets face it, at the time of project start, the tories are totally Firetrucked...).
 
-If you're seeing this, you've probably already done this step. Congrats!
+Additional features are planned to be
+* Sankey chart showing the change in seats
+* Live feed (websocket) of results as they come in
+* Maybe a special feature for some lighthearted trolling/shitposting for the loser of a seat 😏
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Instructions
+Currently the app should be ready, though you need to add a `lib/secrets.json` file with the `clientId` and `authority` values that are used to auth with MSAL. An empty copy of the file is in the second commit on main for reference. `.gitignore` is configured to prevent any more copies of this being added.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Updates
+20230917 Initial implementation of MSAL authentication in a Sveltekit app, for a single tenant login.
