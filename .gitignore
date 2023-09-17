@@ -46,3 +46,6 @@ internal
 *.tgz
 .eslintcache
 .svelte-kit
+
+# secrets files
+secrets.json
